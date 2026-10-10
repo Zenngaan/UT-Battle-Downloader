@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT Battle Downloader</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #080d18;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            width: 100%;
+            min-height: 70px;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background: #101a2c;
+            border-bottom: 2px solid #00d9ff;
+        }
+
+        .logo {
+            font-size: clamp(18px, 3vw, 26px);
+            font-weight: 900;
+            color: #00d9ff;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        button {
+            padding: 11px 18px;
+            background: #101a2c;
+            color: #00d9ff;
+            border: 1px solid #00d9ff;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #00d9ff;
+            color: #080d18;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1200px;
+            flex: 1;
+            margin: 0 auto;
+            padding: 25px 5%;
+        }
+
+        .empty-content {
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #1b344a;
+            border-radius: 12px;
+            background: #0c1422;
+        }
+
+        .coming-soon {
+            color: #ff3030;
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 900;
+            text-align: center;
+            text-shadow: 0 0 18px #ff303044;
+            letter-spacing: 2px;
+        }
+
+        .update-panel,
+        .about-panel {
+            display: none;
+            margin-top: 20px;
+            padding: 22px;
+            background: #101a2c;
+            border: 1px solid #00d9ff;
+            border-radius: 10px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .update-panel.show,
+        .about-panel.show {
+            display: block;
+        }
+
+        .update-panel h2,
+        .about-panel h2 {
+            color: #00d9ff;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .bottom-area {
+            padding: 20px 5%;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+            padding: 18px 10px;
+            text-align: center;
+            background: #101a2c;
+            border-top: 1px solid #00d9ff;
+            color: #9baabd;
+            font-size: 13px;
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px;
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .header button {
+                width: 100%;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .empty-content {
+                min-height: 250px;
+            }
+
+            .update-panel,
+            .about-panel {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">UT Battle <span>Downloader</span></div>
+
+        <button id="updateButton" type="button">
+            What's New Update
+        </button>
+    </header>
+
+    <main class="content">
+
+        <div class="empty-content">
+            <h2 class="coming-soon">COMING SOON!!</h2>
+        </div>
+
+        <section class="update-panel" id="updatePanel">
+            <h2>What's New?</h2>
+            <p>No updates because the game is still in development. Coming soon!</p>
+        </section>
+
+        <section class="about-panel" id="aboutPanel">
+            <h2>About UT Battle</h2>
+            <p>
+                Welcome to UT Battle Downloader! This website is for UT Battle
+                game updates and downloads. The game is currently in development.
+                Stay tuned for future updates!
+            </p>
+        </section>
+
+    </main>
+
+    <div class="bottom-area">
+        <button id="aboutButton" type="button">About This</button>
+    </div>
+
+    <footer>
+        © 2026 UT Battle Downloader. All rights reserved.
+    </footer>
+
+    <script>
+        const updateButton = document.getElementById("updateButton");
+        const updatePanel = document.getElementById("updatePanel");
+
+        const aboutButton = document.getElementById("aboutButton");
+        const aboutPanel = document.getElementById("aboutPanel");
+
+        updateButton.addEventListener("click", function () {
+            updatePanel.classList.toggle("show");
+
+            updateButton.textContent = updatePanel.classList.contains("show")
+                ? "Close Updates"
+                : "What's New Update";
+        });
+
+        aboutButton.addEventListener("click", function () {
+            aboutPanel.classList.toggle("show");
+
+            aboutButton.textContent = aboutPanel.classList.contains("show")
+                ? "Close About"
+                : "About This";
+        });
+    </script>
+
+</body>
+</html>
