@@ -130,6 +130,26 @@
             line-height: 1.8;
         }
 
+        /* ABOUT TITLE WITH PROFILE IMAGE */
+        .about-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .about-title h2 {
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
         .bottom-area {
             padding: 20px 5%;
             text-align: center;
@@ -210,7 +230,12 @@ Zoro is coming soon!
 
         <!-- ABOUT -->
         <section class="about-panel" id="aboutPanel">
-            <h2>About UT Battle</h2>
+
+            <div class="about-title">
+                <h2>About UT Battle</h2>
+                <img src="PF.jpg" alt="Profile" class="about-image">
+            </div>
+
             <p>
                 Welcome to UT Battle Downloader! This website is for UT Battle
                 game downloader! I started creating this game in March 2026,
