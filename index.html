@@ -74,10 +74,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             padding: 20px;
             border: 1px solid #1b344a;
             border-radius: 12px;
             background: #0c1422;
+        }
+
+        /* GAME LOGO IMAGE */
+        .game-logo {
+            width: 180px;
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
         }
 
         .coming-soon {
@@ -176,6 +186,10 @@
     <main class="content">
 
         <div class="empty-content">
+
+            <!-- GAME LOGO -->
+            <img src="Logo.png" alt="UT Battle Logo" class="game-logo">
+
             <h2 class="coming-soon">COMING SOON!!</h2>
         </div>
 
@@ -214,7 +228,7 @@ Zoro is coming soon!
     </div>
 
     <footer>
-        © 2026 UT Battle Downloader. All rights reserved.
+        © 2026 UT Battle Downloader by Ameer Gaan. All rights reserved.
     </footer>
 
     <script>
